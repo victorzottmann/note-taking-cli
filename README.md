@@ -16,6 +16,6 @@ The main file `./index.js` must contain a hashbang for it to know that it's a No
 #!/usr/bin/env node
 ```
 
-Then, in the root directory, open a terminal windows and enter `npm link` to create a symbolic link from the global npm directory to your local development directory (the root of this project)
+Then, in the root directory, open a terminal window and enter `npm link` to create a symbolic link from the global npm directory to your local development directory (the root of this project)
 
 Once it's linked, when you run the `note` command in the project, it'll execute the `./index.js` file.

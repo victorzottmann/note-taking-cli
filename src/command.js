@@ -1,4 +1,4 @@
-import yargs, { argv } from "yargs"
+import yargs from "yargs"
 import { hideBin } from "yargs/helpers"
 
 // hideBin hides the first two arguments of the argv array (note, filename)
