@@ -2,9 +2,9 @@ import { getDB, saveDB, insertDB } from "./db.js";
 
 export const createNote = async (note, tags) => {
   const data = {
-    tags,
-    content: note,
     id: Date.now(),
+    content: note,
+    tags,
   };
 
   await insertDB(data);
@@ -17,15 +17,15 @@ export const getAllNotes = async () => {
 };
 
 export const findNotes = async (filter) => {
-  const { notes } = await getAllNotes();
+  const notes = await getAllNotes();
+  // it's important to lower case everything to normalise matches
   return notes.filter((note) =>
-    // it's important to lower case everything to normalise matches
     note.content.toLowerCase().includes(filter.toLowerCase()),
   );
 };
 
 export const removeNote = async (id) => {
-  const { notes } = await getAllNotes();
+  const notes = await getAllNotes();
   const match = notes.find((note) => note.id === id);
 
   if (match) {
