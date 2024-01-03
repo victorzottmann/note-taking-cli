@@ -13,7 +13,7 @@ const writeFile = async () => {
   const content = await readPackageJson();
   /**
    * The content to be written is a console.log() with the content so that
-   * when the script is run, it output the data from package.json.
+   * when the script is run, it outputs the data from package.json.
    * The content must be stringified because readPackageJson() returns an object
    */
   const output = `console.log(${JSON.stringify(content)})`;
